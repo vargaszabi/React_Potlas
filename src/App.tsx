@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { Component } from 'react';
+import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import Fooldal from './Pages/Fooldal';
+//import Hibajelentes from './Pages/Hibajelentes';
+import Karakterek from './Pages/Karakterek';
+import Footer from './Components/Footer';
+import Header from './Components/Header';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+class App extends Component{
+  render(): React.ReactNode {
+    return <div>
+      <Header/>
+      <Routes>
+        <Route path='/' element = {<Fooldal/>}/>
+        
+        <Route path='karakterek' element={<Karakterek/>}/>
+      </Routes>
+      <Footer/>
     </div>
-  );
+  }
 }
 
 export default App;
